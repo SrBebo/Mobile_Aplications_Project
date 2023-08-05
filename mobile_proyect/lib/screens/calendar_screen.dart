@@ -19,6 +19,7 @@ class _CalendarScreenWidgetState extends State<CalendarScreenWidget> {
         backgroundColor: const Color(0xFF0EF6CC),
       ),
       body: const CalendarWidget(),
+      backgroundColor: const Color(0xFF1B2223),
     );
   }
 }

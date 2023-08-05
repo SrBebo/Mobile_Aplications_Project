@@ -12,7 +12,30 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   @override
   Widget build(BuildContext context) {
     return SfCalendar(
-      view: CalendarView.month,
+      view: CalendarView.workWeek,
+      cellBorderColor: Colors.white,
+      headerStyle: const CalendarHeaderStyle(
+        textStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      monthViewSettings: const MonthViewSettings(
+        appointmentDisplayMode: MonthAppointmentDisplayMode.appointment,
+        monthCellStyle: MonthCellStyle(
+          textStyle: TextStyle(
+            color: Colors.white,
+          ),
+          trailingDatesTextStyle: TextStyle(
+            color: Colors.white,
+          ),
+          leadingDatesTextStyle: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+      appointmentTextStyle: const TextStyle(color: Colors.white),
     );
   }
 }
