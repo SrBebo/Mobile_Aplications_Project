@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_proyect/providers/calendar_provider.dart';
 import 'package:mobile_proyect/screens/calendar_screen.dart';
+import 'package:mobile_proyect/screens/scree_tarea.dart';
+import 'package:mobile_proyect/screens/screen._login.dart';
 import 'package:mobile_proyect/widgets/calendar.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +16,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    initializeDateFormatting('es', null).then((_) {
+      runApp(MyApp());
+    });
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => CalendarProvider())
@@ -21,7 +27,7 @@ class MyApp extends StatelessWidget {
         title: 'Calendar App',
         initialRoute: MainWidget.routeName,
         routes: {
-          MainWidget.routeName: (context) => const CalendarScreenWidget(),
+          MainWidget.routeName: (context) => const LoginWidget(),
         },
       ),
     );
